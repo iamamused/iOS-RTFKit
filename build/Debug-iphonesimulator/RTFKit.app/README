@@ -1,0 +1,11 @@
+
+RTF to NSAttributedString Parser 
+based on http://latex2rtf.sourceforge.net/rtfspec_45.html
+
+NOTE: This project is far from complete or working. DO NOT USE IT!!
+
+See the LICENSE for licensing information. If you require a different license 
+please contact me at license@tropicalpixels.com
+
+Please see http://jeffreysambells.com/iphone-os-static-library-template/ 
+for project layout information.

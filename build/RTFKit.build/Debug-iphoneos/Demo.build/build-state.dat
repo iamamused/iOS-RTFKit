@@ -1,0 +1,478 @@
+TDemo
+v7
+r0
+t295211143.273984
+cCheck dependencies
+cCpResource build/Debug-iphoneos/RTFKit.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist
+cProcessInfoPlistFile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/Info.plist RTFKit-Info.plist
+cCompileXIB /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/MainWindow.xib
+cCompileXIB /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/DemoViewController.xib
+cCpResource build/Debug-iphoneos/RTFKit.app/test.rtf test.rtf
+cProcessPCH /var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hjxfyldqtpsozbdhfjnruvtrirsz/RTFKit_Prefix.pch.gch RTFKit_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hfuxytcekooghoeogvyhdpjtwsrv/RTFKit_Prefix.pch.gch RTFKit_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/main.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/DemoAppDelegate.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/DemoViewController.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/RTFKit normal armv6
+cCompileC build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/main.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/DemoAppDelegate.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/DemoViewController.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/RTFKit normal armv7
+cCreateUniversalBinary /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/RTFKit normal "armv6 armv7"
+cGenerateDSYMFile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app.dSYM /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/RTFKit
+cProcessProductPackaging "/Users/jsambells/Library/MobileDevice/Provisioning Profiles/82129E6B-FCE7-4334-9705-BF0B04D59F45.mobileprovision" /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/embedded.mobileprovision
+cTouch /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app
+cProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit.xcent
+cCodeSign /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk
+c000000004BE2F3C40000000000000110
+t1273164740
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist
+c000000004B9F103D00000000000000DD
+t1268715581
+s221
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist
+c000000004B9F103D00000000000001E5
+t1268715581
+s485
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BA03AC100000000003B4B70
+t1268792001
+s3885936
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004B9F26D2000000000036A650
+t1268721362
+s3581520
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004B9F26B90000000000001355
+t1268721337
+s4949
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004B9F318D000000000000098F
+t1268724109
+s2447
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004B9F32090000000002703230
+t1268724233
+s40907312
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoAppDelegate.h
+c000000004BE858FF00000000000001D2
+t1273518335
+s466
+i<UIKit/UIKit.h>
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoAppDelegate.m
+c000000004BE858FF000000000000037E
+t1273518335
+s894
+i"DemoAppDelegate.h"
+i"DemoViewController.h"
+i<RTFKit/RTFKit.h>
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.h
+c000000004BE858FF00000000000000EA
+t1273518335
+s234
+i<UIKit/UIKit.h>
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m
+c000000004BE858FF000000000000066A
+t1273518335
+s1642
+i"DemoViewController.h"
+i<RTFKit/RTFKit.h>
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/DemoViewController.xib
+c000000004BE8581D0000000000001999
+t1273518109
+s6553
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/MainWindow.xib
+c000000004BE8581D00000000000056F2
+t1273518109
+s22258
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/RTFKit_Prefix.pch
+c000000004BE858FF0000000000000126
+t1273518335
+s294
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app
+t1273518336
+s408
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app.dSYM
+t1273518336
+s102
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/DemoViewController.nib
+t1273518318
+s795
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/Info.plist
+t1273518317
+s686
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/MainWindow.nib
+t1273518318
+s1128
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/PkgInfo
+t1273518317
+s8
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/RTFKit
+t1273518336
+s90864
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/ResourceRules.plist
+t1273518317
+s485
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/embedded.mobileprovision
+t1273518320
+s7542
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/test.rtf
+t1273518318
+s464
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/libRTFKit.a
+c000000004BE858FF00000000000122C0
+t1273518335
+s74432
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/DemoAppDelegate.o
+t1273518336
+s44444
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/DemoViewController.o
+t1273518336
+s34868
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/RTFKit
+t1273518336
+s35796
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/RTFKit.LinkFileList
+c000000004BE858ED0000000000000199
+t1273518317
+s409
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/main.o
+t1273518336
+s6472
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/DemoAppDelegate.o
+t1273518336
+s44364
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/DemoViewController.o
+t1273518336
+s34840
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/RTFKit
+t1273518336
+s35772
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/RTFKit.LinkFileList
+c000000004BE858ED0000000000000199
+t1273518317
+s409
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/main.o
+t1273518336
+s6456
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit.xcent
+t1273518320
+s376
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFKit.h
+c000000004BE858FF0000000000000106
+t1273518335
+s262
+i<Foundation/Foundation.h>
+i"RTFReader1.h"
+i"RTFReader.h"
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.h
+c000000004BE858FF000000000000010C
+t1273518335
+s268
+i<Foundation/Foundation.h>
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.h
+c000000004BE813500000000000001485
+t1273500496
+s5253
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/main.m
+c000000004BE858FF000000000000016B
+t1273518335
+s363
+i<UIKit/UIKit.h>
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/test.rtf
+c000000004BE80A9000000000000001D0
+t1273498256
+s464
+
+N/Users/jsambells/Library/MobileDevice/Provisioning Profiles/82129E6B-FCE7-4334-9705-BF0B04D59F45.mobileprovision
+c000000004BE225B70000000000001D76
+t1273111991
+s7542
+
+N/var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hfuxytcekooghoeogvyhdpjtwsrv/RTFKit_Prefix.pch.gch
+t1273518336
+s9421460
+
+N/var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hjxfyldqtpsozbdhfjnruvtrirsz/RTFKit_Prefix.pch.gch
+t1273518336
+s8958612
+
+NRTFKit-Info.plist
+c000000004BE8581D000000000000038D
+t1273518109
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies295211143#295211143#0(89"[BWARN]warning: building for deployment target '3.2' should omit the armv6 architecture.1(22@81"warning: building for deployment target '3.2' should omit the armv6 architecture.295211143#18446744073709551615#0#0(1@0"0(0#1#0"8616125408#0"0#
+
+CCodeSign /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app
+s295211136.586292
+e295211136.795800
+r1
+xCodeSign
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app
+lSLF07#2@40"CodeSign build/Debug-iphoneos/RTFKit.app295211136#295211136#0(0"0(0#0#86"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app8616104864#709"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate    /usr/bin/codesign -f -s "iPhone Developer: Jeffrey Sambells (32T965TUD5)" --resource-rules=/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/ResourceRules.plist --entitlements /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit.xcent /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app0#
+
+CCompileC build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/DemoAppDelegate.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s295211136.262029
+e295211136.348496
+r1
+xCompileC
+xbuild/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/DemoAppDelegate.o
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoAppDelegate.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@88"Compile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoAppDelegate.m295211136#295211136#0(0"0(0#0#80"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoAppDelegate.m8616224544#1961"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-generated-files.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-own-target-headers.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-all-target-headers.hmap -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-project-headers.hmap -F/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources/armv6 -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources -include /var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hjxfyldqtpsozbdhfjnruvtrirsz/RTFKit_Prefix.pch -c /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoAppDelegate.m -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/DemoAppDelegate.o0#
+
+CCompileC build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/DemoViewController.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s295211136.317920
+e295211136.387523
+r1
+xCompileC
+xbuild/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/DemoViewController.o
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m: In function '-[DemoViewController loadView]':
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m:29: warning: unused variable 'screen'
+lSLF07#2@91"Compile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m295211136#295211136#0(253"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m: In function '-[DemoViewController loadView]':/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m:29: warning: unused variable 'screen'1(22@24"Unused variable 'screen'295211136#131#122#0(6@83"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m295211135#29#0#29#0#19"unused variable '*'0(0#0#83"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m8615754560#1967"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-generated-files.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-own-target-headers.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-all-target-headers.hmap -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-project-headers.hmap -F/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources/armv6 -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources -include /var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hjxfyldqtpsozbdhfjnruvtrirsz/RTFKit_Prefix.pch -c /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/DemoViewController.o0#
+
+CCompileC build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/main.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s295211136.260154
+e295211136.317812
+r1
+xCompileC
+xbuild/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/main.o
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/main.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@69"Compile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/main.m295211136#295211136#0(0"0(0#0#61"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/main.m8617173824#1931"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-generated-files.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-own-target-headers.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-all-target-headers.hmap -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-project-headers.hmap -F/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources/armv6 -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources -include /var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hjxfyldqtpsozbdhfjnruvtrirsz/RTFKit_Prefix.pch -c /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/main.m -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/main.o0#
+
+CCompileC build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/DemoAppDelegate.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s295211136.413708
+e295211136.488817
+r1
+xCompileC
+xbuild/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/DemoAppDelegate.o
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoAppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@88"Compile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoAppDelegate.m295211136#295211136#0(0"0(0#0#80"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoAppDelegate.m8615263424#1961"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-generated-files.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-own-target-headers.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-all-target-headers.hmap -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-project-headers.hmap -F/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources/armv7 -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources -include /var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hfuxytcekooghoeogvyhdpjtwsrv/RTFKit_Prefix.pch -c /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoAppDelegate.m -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/DemoAppDelegate.o0#
+
+CCompileC build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/DemoViewController.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s295211136.446495
+e295211136.509005
+r1
+xCompileC
+xbuild/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/DemoViewController.o
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m: In function '-[DemoViewController loadView]':
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m:29: warning: unused variable 'screen'
+lSLF07#2@91"Compile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m295211136#295211136#0(253"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m: In function '-[DemoViewController loadView]':/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m:29: warning: unused variable 'screen'1(22@24"Unused variable 'screen'295211136#131#122#0(6@83"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m295211135#29#0#29#0#19"unused variable '*'0(0#0#83"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m8614356768#1967"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-generated-files.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-own-target-headers.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-all-target-headers.hmap -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-project-headers.hmap -F/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources/armv7 -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources -include /var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hfuxytcekooghoeogvyhdpjtwsrv/RTFKit_Prefix.pch -c /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/Classes/DemoViewController.m -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/DemoViewController.o0#
+
+CCompileC build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/main.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s295211136.348601
+e295211136.413605
+r1
+xCompileC
+xbuild/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/main.o
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@69"Compile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/main.m295211136#295211136#0(0"0(0#0#61"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/main.m8611103936#1931"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-generated-files.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-own-target-headers.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-all-target-headers.hmap -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-project-headers.hmap -F/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources/armv7 -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources -include /var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hfuxytcekooghoeogvyhdpjtwsrv/RTFKit_Prefix.pch -c /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/main.m -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/main.o0#
+
+CCompileXIB /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/DemoViewController.xib
+s295211117.893985
+e295211118.553948
+r1
+xCompileXIB
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/DemoViewController.xib
+lSLF07#2@33"CompileXIB DemoViewController.xib295211117#295211118#0(0"0(0#0#77"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/DemoViewController.xib8624855616#605"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/DemoViewController.nib /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/DemoViewController.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk0#
+
+CCompileXIB /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/MainWindow.xib
+s295211117.893317
+e295211118.553717
+r1
+xCompileXIB
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib295211117#295211118#0(0"0(0#0#69"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/MainWindow.xib8625185472#589"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/MainWindow.nib /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/MainWindow.xib --sdk /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk0#
+
+CCpResource build/Debug-iphoneos/RTFKit.app/ResourceRules.plist /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist
+s295211117.847853
+e295211117.893231
+r1
+xCpResource
+xbuild/Debug-iphoneos/RTFKit.app/ResourceRules.plist
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist
+lSLF07#2@94"Copy /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist295211117#295211117#0(0"0(0#0#89"/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist8618214176#511"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/ResourceRules.plist /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app0#
+
+CCpResource build/Debug-iphoneos/RTFKit.app/test.rtf test.rtf
+s295211118.554020
+e295211118.559367
+r1
+xCpResource
+xbuild/Debug-iphoneos/RTFKit.app/test.rtf
+xtest.rtf
+lSLF07#2@13"Copy test.rtf295211118#295211118#0(0"0(0#0#63"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/test.rtf8612968896#485"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/test.rtf /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app0#
+
+CCreateUniversalBinary /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/RTFKit normal "armv6 armv7"
+s295211136.548032
+e295211136.554209
+r1
+xCreateUniversalBinary
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/RTFKit
+xnormal
+xarmv6 armv7
+lSLF07#2@81"CreateUniversalBinary build/Debug-iphoneos/RTFKit.app/RTFKit normal "armv6 armv7"295211136#295211136#0(0"0(0#0#66"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/armv6 armv78619949312#570"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/lipo -create /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/RTFKit /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/RTFKit -output /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/RTFKit0#
+
+CGenerateDSYMFile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app.dSYM /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/RTFKit
+s295211136.554403
+e295211136.583418
+r1
+xGenerateDSYMFile
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app.dSYM
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/RTFKit
+lSLF07#2@92"GenerateDSYMFile build/Debug-iphoneos/RTFKit.app.dSYM build/Debug-iphoneos/RTFKit.app/RTFKit295211136#295211136#0(0"0(0#0#93"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/RTFKit8617654816#407"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/RTFKit -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app.dSYM0#
+
+CLd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/RTFKit normal armv6
+s295211136.387615
+e295211136.446382
+r1
+xLd
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/RTFKit
+xnormal
+xarmv6
+lSLF07#2@132"Link /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/RTFKit295211136#295211136#0(0"0(0#0#0"8615608128#954"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv IPHONEOS_DEPLOYMENT_TARGET 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv6 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -L/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos -F/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos -filelist /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/RTFKit.LinkFileList -dead_strip -ObjC -all_load -miphoneos-version-min=3.2 -lRTFKit -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv6/RTFKit0#
+
+CLd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/RTFKit normal armv7
+s295211136.509100
+e295211136.547939
+r1
+xLd
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/RTFKit
+xnormal
+xarmv7
+lSLF07#2@132"Link /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/RTFKit295211136#295211136#0(0"0(0#0#0"8614220832#954"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv IPHONEOS_DEPLOYMENT_TARGET 3.2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -arch armv7 -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -L/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos -F/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos -filelist /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/RTFKit.LinkFileList -dead_strip -ObjC -all_load -miphoneos-version-min=3.2 -lRTFKit -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/Objects-normal/armv7/RTFKit0#
+
+CProcessInfoPlistFile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/Info.plist RTFKit-Info.plist
+s295211117.849125
+e295211117.853342
+r1
+xProcessInfoPlistFile
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/Info.plist
+xRTFKit-Info.plist
+lSLF07#2@25"Process RTFKit-Info.plist295211117#295211117#0(0"0(0#0#72"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/RTFKit-Info.plist8617810848#622"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility RTFKit-Info.plist -genpkginfo /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/ResourceRules.plist -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/Info.plist0#
+
+CProcessPCH /var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hfuxytcekooghoeogvyhdpjtwsrv/RTFKit_Prefix.pch.gch RTFKit_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s295211135.469815
+e295211136.259907
+r1
+xProcessPCH
+x/var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hfuxytcekooghoeogvyhdpjtwsrv/RTFKit_Prefix.pch.gch
+xRTFKit_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@28"Precompile RTFKit_Prefix.pch295211135#295211136#0(0"0(0#0#72"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/RTFKit_Prefix.pch8617443136#1816"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-generated-files.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-own-target-headers.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-all-target-headers.hmap -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-project-headers.hmap -F/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources/armv7 -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources -c /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/RTFKit_Prefix.pch -o /var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hfuxytcekooghoeogvyhdpjtwsrv/RTFKit_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hjxfyldqtpsozbdhfjnruvtrirsz/RTFKit_Prefix.pch.gch RTFKit_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s295211135.469079
+e295211136.223331
+r1
+xProcessPCH
+x/var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hjxfyldqtpsozbdhfjnruvtrirsz/RTFKit_Prefix.pch.gch
+xRTFKit_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@28"Precompile RTFKit_Prefix.pch295211135#295211136#0(0"0(0#0#72"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/RTFKit_Prefix.pch8617785248#1816"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=3.2 -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-generated-files.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-own-target-headers.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-all-target-headers.hmap -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit-project-headers.hmap -F/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources/armv6 -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/DerivedSources -c /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/RTFKit_Prefix.pch -o /var/folders/tQ/tQtxqFdbHyy8rEfjKZDSyU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/RTFKit_Prefix-hjxfyldqtpsozbdhfjnruvtrirsz/RTFKit_Prefix.pch.gch0#
+
+CProcessProductPackaging "/Users/jsambells/Library/MobileDevice/Provisioning Profiles/82129E6B-FCE7-4334-9705-BF0B04D59F45.mobileprovision" /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/embedded.mobileprovision
+s295211120.418077
+e295211120.420292
+r1
+xProcessProductPackaging
+x/Users/jsambells/Library/MobileDevice/Provisioning Profiles/82129E6B-FCE7-4334-9705-BF0B04D59F45.mobileprovision
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/embedded.mobileprovision
+lSLF07#2@195"ProcessProductPackaging "/Users/jsambells/Library/MobileDevice/Provisioning Profiles/82129E6B-FCE7-4334-9705-BF0B04D59F45.mobileprovision" build/Debug-iphoneos/RTFKit.app/embedded.mobileprovision295211120#295211120#0(0"0(0#0#111"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/embedded.mobileprovision8613582208#458"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/jsambells/Library/MobileDevice/Provisioning Profiles/82129E6B-FCE7-4334-9705-BF0B04D59F45.mobileprovision" -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app/embedded.mobileprovision0#
+
+CProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit.xcent
+s295211120.460989
+e295211120.484338
+r1
+xProcessProductPackaging
+x/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit.xcent
+lSLF07#2@170"ProcessProductPackaging /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit.xcent295211120#295211120#0(0"0(0#0#112"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit.xcent8620780576#459"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS3.2.sdk/Entitlements.plist -entitlements -format xml -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphoneos/Demo.build/RTFKit.xcent0#
+
+CTouch /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app
+s295211136.583602
+e295211136.586159
+r1
+xTouch
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app
+lSLF07#2@92"Touch /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app295211136#295211136#0(0"0(0#0#0"8617193152#295"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphoneos/RTFKit.app0#
+

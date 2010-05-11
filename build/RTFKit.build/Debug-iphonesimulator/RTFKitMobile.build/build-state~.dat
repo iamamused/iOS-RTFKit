@@ -1,0 +1,123 @@
+TRTFKitMobile
+v7
+r0
+t295241984.859355
+cCheck dependencies
+cCompileC build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/Objects-normal/i386/RTFReader.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLibtool /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphonesimulator/libRTFKit.a normal i386
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk
+c000000004BE2F3D80000000000000110
+t1273164760
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BD1FFC200000000002A96A0
+t1272053698
+s2791072
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BD1FF9E0000000000001355
+t1272053662
+s4949
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004BD20412000000000000098F
+t1272054802
+s2447
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphonesimulator/libRTFKit.a
+t1273549184
+s38688
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/Objects-normal/i386/RTFKit.LinkFileList
+c000000004BE8D1800000000000000093
+t1273549184
+s147
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/Objects-normal/i386/RTFReader.o
+t1273549184
+s37544
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/Objects-normal/i386/RTFReader1.o
+t1273521438
+s35848
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.h
+c000000004BE8D01C00000000000015EC
+t1273548828
+s5612
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m
+c000000004BE8D15C00000000000060A4
+t1273549148
+s24740
+i<UIKit/UIKit.h>
+i"RTFReader.h"
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.h
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m
+c000000004BE8651500000000000058F0
+t1273521429
+s22768
+i<UIKit/UIKit.h>
+i"RTFReader1.h"
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies295241984#295241984#0(0"0(0#1#0"8641602880#0"0#
+
+CCompileC build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/Objects-normal/i386/RTFReader.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s295241984.654676
+e295241984.854983
+r1
+xCompileC
+xbuild/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/Objects-normal/i386/RTFReader.o
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m: In function '-[RTFReader initWithFilePath:]':
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m:193: warning: 'stringWithContentsOfFile:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:361)
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m:183: warning: unused variable 'newText'
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m: In function '-[RTFReader translateKeyword:withParam:fParam:]':
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m:304: warning: 'stringWithCString:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:368)
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m: In function '-[RTFReader storeCharacter:flush:]':
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m:717: warning: 'stringWithCString:length:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:367)
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m:717: warning: pointer targets in passing argument 1 of 'stringWithCString:length:' differ in signedness
+lSLF07#2@89"Compile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m295241984#295241984#0(1627"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m: In function '-[RTFReader initWithFilePath:]':/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m:193: warning: 'stringWithContentsOfFile:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:361)/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m:183: warning: unused variable 'newText'/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m: In function '-[RTFReader translateKeyword:withParam:fParam:]':/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m:304: warning: 'stringWithCString:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:368)/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m: In function '-[RTFReader storeCharacter:flush:]':/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m:717: warning: 'stringWithCString:length:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:367)/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m:717: warning: pointer targets in passing argument 1 of 'stringWithCString:length:' differ in signedness5(22@209"'stringWithContentsOfFile:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:361)295241984#129#306#0(6@81"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m295241948#193#0#193#0#33"'*' is deprecated (declared at *)0(22@25"Unused variable 'newText'295241984#435#122#0(6@81"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m295241948#183#0#183#0#19"unused variable '*'0(22@202"'stringWithCString:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:368)295241984#703#299#0(6@81"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m295241948#304#0#304#0#33"'*' is deprecated (declared at *)0(22@209"'stringWithCString:length:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:367)295241984#1135#306#0(6@81"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m295241948#717#0#717#0#33"'*' is deprecated (declared at *)0(22@89"Pointer targets in passing argument 1 of 'stringWithCString:length:' differ in signedness295241984#1441#186#0(6@81"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m295241948#717#0#717#0#65"pointer targets in passing argument * of '*' differ in signedness0(0#0#81"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m8639378016#1936"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/RTFKit-generated-files.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/RTFKit-own-target-headers.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/RTFKit-all-target-headers.hmap -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/RTFKit-project-headers.hmap -F/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphonesimulator -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphonesimulator/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/DerivedSources/i386 -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/DerivedSources -c /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/Objects-normal/i386/RTFReader.o0#
+
+CCompileC build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/Objects-normal/i386/RTFReader1.o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s295214237.893115
+e295214238.159302
+r1
+xCompileC
+xbuild/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/Objects-normal/i386/RTFReader1.o
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m: In function '-[RTFReader1 initWithFilePath:]':
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m:187: warning: format not a string literal and no format arguments
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m:190: warning: 'stringWithContentsOfFile:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:361)
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m:191: warning: format not a string literal and no format arguments
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m: In function '-[RTFReader1 ecTranslateKeyword:param:fParam:doc:]':
+o/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m:288: warning: 'stringWithCString:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:368)
+lSLF07#2@90"Compile /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m295214237#295214238#0(1186"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m: In function '-[RTFReader1 initWithFilePath:]':/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m:187: warning: format not a string literal and no format arguments/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m:190: warning: 'stringWithContentsOfFile:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:361)/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m:191: warning: format not a string literal and no format arguments/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m: In function '-[RTFReader1 ecTranslateKeyword:param:fParam:doc:]':/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m:288: warning: 'stringWithCString:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:368)4(22@51"Format not a string literal and no format arguments295214238#131#149#0(6@82"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m295214229#187#0#187#0#51"format not a string literal and no format arguments0(22@209"'stringWithContentsOfFile:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:361)295214238#280#307#0(6@82"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m295214229#190#0#190#0#33"'*' is deprecated (declared at *)0(22@51"Format not a string literal and no format arguments295214238#587#149#0(6@82"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m295214229#191#0#191#0#51"format not a string literal and no format arguments0(22@202"'stringWithCString:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:368)295214238#886#300#0(6@82"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m295214229#288#0#288#0#33"'*' is deprecated (declared at *)0(0#0#82"/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m8620585248#1938"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -mmacosx-version-min=10.5 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/RTFKit-generated-files.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/RTFKit-own-target-headers.hmap -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/RTFKit-all-target-headers.hmap -iquote /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/RTFKit-project-headers.hmap -F/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphonesimulator -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphonesimulator/include -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/DerivedSources/i386 -I/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/DerivedSources -c /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader1.m -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/Objects-normal/i386/RTFReader1.o0#
+
+CLibtool /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphonesimulator/libRTFKit.a normal i386
+s295241984.855089
+e295241984.859321
+r1
+xLibtool
+x/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphonesimulator/libRTFKit.a
+xnormal
+xi386
+lSLF07#2@59"Libtool build/Debug-iphonesimulator/libRTFKit.a normal i386295241984#295241984#0(0"0(0#0#0"8641551744#800"    cd /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool -static -arch_only i386 -syslibroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk -L/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphonesimulator -filelist /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/RTFKit.build/Debug-iphonesimulator/RTFKitMobile.build/Objects-normal/i386/RTFKit.LinkFileList -framework Foundation -o /Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/build/Debug-iphonesimulator/libRTFKit.a0#
+
