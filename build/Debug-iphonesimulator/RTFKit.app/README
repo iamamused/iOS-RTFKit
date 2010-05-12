@@ -2,7 +2,9 @@
 RTF to NSAttributedString Parser 
 based on http://latex2rtf.sourceforge.net/rtfspec_45.html
 
-NOTE: This project is far from complete or working. DO NOT USE IT!!
+This is a work in progress and is far from complete or working. 
+
+DO NOT USE IT!!
 
 See the LICENSE for licensing information. If you require a different license 
 please contact me at license@tropicalpixels.com

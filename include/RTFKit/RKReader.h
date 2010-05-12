@@ -49,6 +49,7 @@ typedef enum {
 	rkInternalStateHex         // Store HEX data
 } rkInternalState;
 
+//http://msdn.microsoft.com/en-us/library/aa140283(v=office.10).aspx
 typedef enum {
 	rkPropBold, 
 	rkPropItalic, 

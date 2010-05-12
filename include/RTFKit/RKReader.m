@@ -117,9 +117,9 @@ static RTFSymbol keywordDescription[] = {
     {"par",      0,      fFalse,     rkKeywordTypeCharacter,    0x0a},
     
     
-    
-    // JIMB BUG BUG ...
-    // Most of these need better mapping ...
+	// Most of these need better mapping ...
+	{"fs",       12,      fTrue,     rkKeywordTypeCharacter,    'X'},
+
     {"emspace",  0,      fFalse,     rkKeywordTypeCharacter,    ' '},
     {"enspace",  0,      fFalse,     rkKeywordTypeCharacter,    ' '},
     {"~",        0,      fFalse,     rkKeywordTypeCharacter,    ' '},
@@ -144,44 +144,44 @@ static RTFSymbol keywordDescription[] = {
     {"bin",      0,      fFalse,     rkKeywordTypeSpecial,        rkSpecialTypeBin},
     {"*",        0,      fFalse,     rkKeywordTypeSpecial,        rkSpecialTypeSkip},
     {"'",        0,      fFalse,     rkKeywordTypeSpecial,        rkSpecialTypeHex},
-    {"author",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"buptim",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"colortbl", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"comment",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"creatim",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"doccomm",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"fonttbl",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"footer",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"footerf",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"footerl",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"footerr",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"footnote", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"ftncn",    0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"ftnsep",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"ftnsepc",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"header",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"headerf",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"headerl",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"headerr",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"info",     0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"keywords", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"operator", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"pict",     0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"printim",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"private1", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"revtim",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"rxe",      0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"stylesheet",   0,  fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"subject",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"tc",       0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"title",    0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"txe",      0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-    {"xe",       0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"author",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"buptim",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"colortbl", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"comment",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"creatim",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"doccomm",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"fonttbl",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"footer",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"footerf",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"footerl",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"footerr",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"footnote", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"ftncn",    0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"ftnsep",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"ftnsepc",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"header",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"headerf",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"headerl",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"headerr",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"info",     0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"keywords", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"operator", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"pict",     0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"printim",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"private1", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"revtim",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"rxe",      0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"stylesheet",   0,  fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"subject",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"tc",       0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"title",    0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"txe",      0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
+//    {"xe",       0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
     {"{",        0,      fFalse,     rkKeywordTypeCharacter,      '{'},
     {"}",        0,      fFalse,     rkKeywordTypeCharacter,      '}'},
     {"\\",       0,      fFalse,     rkKeywordTypeCharacter,      '\\'}
 };
-int isymMax = sizeof(keywordDescription) / sizeof(RTFSymbol);
+int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 
 
 /**
@@ -196,11 +196,11 @@ int isymMax = sizeof(keywordDescription) / sizeof(RTFSymbol);
     destinationString = [[[NSMutableAttributedString alloc] initWithString:@""] retain];
 	
 	if ([self parse] == rkOK) {
-		NSLog(@"%@", destinationString);
+		NSLog(@"Result: %@", destinationString);
 	}
 	
-	NSString *myText = [NSString stringWithContentsOfFile:filePath];  
-	NSLog(@"%@", myText);
+	//NSString *myText = [NSString stringWithContentsOfFile:filePath];  
+	//NSLog(@"%@", myText);
 	
 	return self;
 }
@@ -308,26 +308,39 @@ int isymMax = sizeof(keywordDescription) / sizeof(RTFSymbol);
  * fParam:      fTrue if the control had a parameter; (that is, if param is valid)
  *              fFalse if it did not.
  */
-- (int) translateKeyword:(char *)szKeyword withParam:(int)param fParam:(bool)fParam;
+- (int) translateKeyword:(char *)keyword withParam:(int)param fParam:(bool)fParam;
 {
-	//NSLog(@"keyword: %@", [NSString stringWithCString:szKeyword]);
+	
+	NSLog(@"Processing: %@", [NSString stringWithCString:keyword]);
+
     int isym;
 	
-    // search for szKeyword in keywordDescription
+    // search for keyword in keywordDescription
 	
-    for (isym = 0; isym < isymMax; isym++)
-        if (strcmp(szKeyword, keywordDescription[isym].szKeyword) == 0)
+    for (isym = 0; isym < numKeywords; isym++) {
+        if (strcmp(keyword, keywordDescription[isym].szKeyword) == 0) {
+			// The keyword is in the description list.
             break;
-    if (isym == isymMax)            // control word not found
-    {
-        if (fSkipDestIfUnk)         // if this is a new destination
-            destinationState = rkDestinationStateSkip;          // skip the destination
-		// else just discard it
-        fSkipDestIfUnk = fFalse;
-        return rkOK;
-    }
+		}
+	}
 	
-    // Found it!  use kwd and idx to determine what to do with it.
+	if (isym == numKeywords) {
+		NSLog(@"Ignore: %@", [NSString stringWithCString:keyword]);
+
+		// control word not found
+		if (fSkipDestIfUnk) {
+			// if this is a new destination skip the destination
+			destinationState = rkDestinationStateSkip;
+		}
+		// just discard it
+		fSkipDestIfUnk = fFalse;
+		return rkOK;
+	}
+
+
+	NSLog(@"Found: %@", [NSString stringWithCString:keyword]);
+
+    // Found it! use kwd and idx to determine what to do with it.
 	
     fSkipDestIfUnk = fFalse;
 	
@@ -500,7 +513,7 @@ int isymMax = sizeof(keywordDescription) / sizeof(RTFSymbol);
 					break;
 				
 				case '\\':
-					//NSLog(@"Parse control words %d", destinationLength);
+					//NSLog(@"Parse control word %d", destinationLength);
 					// Parse control words
 					if ((ec = [self parseNextKeyword]) != rkOK)
 						return ec;
