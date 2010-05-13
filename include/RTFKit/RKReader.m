@@ -53,6 +53,7 @@
 
 // Property descriptions
 static RTFProperty propertyDescription[rkPropMax] = {
+    {rkActionTypeWord,   rkPropertyTypeCharacter,  offsetof(RTFCharacter, fSize)},       // rkPropFontSize
     {rkActionTypeByte,   rkPropertyTypeCharacter,  offsetof(RTFCharacter, fBold)},       // rkPropBold
     {rkActionTypeByte,   rkPropertyTypeCharacter,  offsetof(RTFCharacter, fItalic)},     // rkPropItalic
     {rkActionTypeByte,   rkPropertyTypeCharacter,  offsetof(RTFCharacter, fUnderline)},  // rkPropUnderline
@@ -82,6 +83,8 @@ static RTFProperty propertyDescription[rkPropMax] = {
 // Keyword descriptions
 static RTFSymbol keywordDescription[] = {
 	//  keyword     dflt    fPassDflt   kwd         idx
+	{"fs",   12.0f,       fTrue,     rkKeywordTypeProperty,    rkPropFontSize},
+
     {"b",        1,      fFalse,     rkKeywordTypeProperty,    rkPropBold},      // kCTFontBoldTrait
     {"u",        1,      fFalse,     rkKeywordTypeProperty,    rkPropUnderline}, //
     {"i",        1,      fFalse,     rkKeywordTypeProperty,    rkPropItalic},    // kCTFontItalicTrait
@@ -118,7 +121,6 @@ static RTFSymbol keywordDescription[] = {
     
     
 	// Most of these need better mapping ...
-	{"fs",       12,      fTrue,     rkKeywordTypeCharacter,    'X'},
 
     {"emspace",  0,      fFalse,     rkKeywordTypeCharacter,    ' '},
     {"enspace",  0,      fFalse,     rkKeywordTypeCharacter,    ' '},
@@ -189,9 +191,7 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
  */
 - (id)initWithFilePath:(NSString *)filePath;
 {
-	
-	NSMutableString * newText = nil;
-		
+			
     sourceRTFData  = [[NSData dataWithContentsOfMappedFile:filePath] retain];
     destinationString = [[[NSMutableAttributedString alloc] initWithString:@""] retain];
 	
@@ -199,8 +199,9 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 		NSLog(@"Result: %@", destinationString);
 	}
 	
-	//NSString *myText = [NSString stringWithContentsOfFile:filePath];  
-	//NSLog(@"%@", myText);
+	NSError *error;
+	NSString *myText = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];  
+	NSLog(@"%@", myText);
 	
 	return self;
 }
@@ -594,7 +595,9 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 - (int) pushState
 {
     RTFSaveState *psaveNew = (RTFSaveState *)malloc(sizeof(RTFSaveState));
-    
+
+	//RTFSaveState *ctNew = (RTFCoreTextAttributes *)malloc(sizeof(RTFCoreTextAttributes));
+
 	if (!psaveNew) {
         return rkStackOverflow;
 	}
@@ -653,6 +656,10 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
  */
 - (int) parseNextKeyword
 {
+	
+	// The parser found a \ character so the keyword parser has been invoked.
+	// Look at the rest of the string for the keyword 
+	
     int ch;
     bool fParam = fFalse;
     bool fNeg = fFalse;
@@ -663,43 +670,83 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 	
     szKeyword[0] = '\0';
     szParameter[0] = '\0';
-    if ((ch = [self getCharacterFromBuffer]) == EOF)
+	
+	// Get the next character
+    if ((ch = [self getCharacterFromBuffer]) == EOF) {
+		// It is the end of the file.
         return rkEndOfFile;
-    if (!isalpha(ch))           // a control symbol; no delimiter.
-    {
-        szKeyword[0] = (char) ch;
-        szKeyword[1] = '\0';
-		
+	}
+
+    if (!isalpha(ch)) {
+		// If the character isn't alplanumeric it's a control symbol; no delimiter.
+        szKeyword[0] = (char)ch;
+        szKeyword[1] = '\0'; // end the string.
         return [self translateKeyword:szKeyword withParam:0 fParam:fParam];
     }
-    for (pch = szKeyword; isalpha(ch); ch = [self getCharacterFromBuffer])
-        *pch++ = (char) ch;
-    *pch = '\0';
-    if (ch == '-')
-    {
+
+	// Keep getting characters until we hit a non alpha character.
+	for (pch = szKeyword; isalpha(ch); ch = [self getCharacterFromBuffer]) {
+        *pch++ = (char)ch;
+	}
+	
+	// End the string.
+    *pch = '\0'; 
+
+	// Check if the last character was a dash.
+    if ( ch == '-' ) {
+		
+		// Flag the parameter as negative for later.
         fNeg  = fTrue;
-        // if ((ch = getc(fp)) == EOF)
-        if ((ch = [self getCharacterFromBuffer]) == EOF)
+		
+        // Update ch to the next character.
+		if ((ch = [self getCharacterFromBuffer]) == EOF) {
             return rkEndOfFile;
+		}
     }
-    if (isdigit(ch))
-    {
-        fParam = fTrue; // a digit after the control means we have a parameter
-        for (pch = szParameter; isdigit(ch); ch = [self getCharacterFromBuffer])
-            *pch++ = (char) ch;
+	
+	// Check if the the ch character is a digit.
+    if ( isdigit( ch ) ) {
+		
+		// If there is a digit after the control it's a parameter.
+        fParam = fTrue;
+		
+		// Keep getting digits until we hit a non digit character.
+        for (pch = szParameter; isdigit(ch); ch = [self getCharacterFromBuffer]) {
+            *pch++ = (char)ch;
+		}
+		
+		// End the string.
         *pch = '\0';
+		
+		// The atoi() function converts str into an integer, and returns 
+		// that integer. str should start with some sort of number, and atoi() 
+		// will stop reading from str as soon as a non-numerical character 
+		//has been read. 
         param = atoi(szParameter);
-        if (fNeg)
+		
+		// If the param was negative make it negative.
+        if (fNeg) {
             param = -param;
+		}
+		
+		// The function atol() converts str into a long, then returns 
+		// that value. atol() will read from str until it finds any character
+		// that should not be in a long. The resulting truncated value is
+		// then converted and returned. 
         lParam = atol(szParameter);
-        if (fNeg)
+		
+		// If the param was negative make it negative.
+        if (fNeg) {
             param = -param;
+		}
     }
     
-	if (ch != ' ') {
+	// If the character isn't a space put it in the destination.
+	if ( ch != ' ' ) {
         [self putCharacter:ch];
 	}
 	
+	// We have the keyword so let's figure out what to do with it.
     return [self translateKeyword:szKeyword withParam:param fParam:fParam];
 }
 
@@ -733,14 +780,18 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
  */
 - (int) storeCharacter:(int)ch flush:(bool)flush;
 {   
+	
+    int test = characterProperties.fSize;
+	NSLog( @"Size %d", test );
+	
 	/*
-    char boldTest = characterProperties.fBold;
 	if (boldTest == fTrue) {
 		NSLog( @"Bold at %d", destinationLength );
 	} else {
 		NSLog(@"Not Bold at %d", destinationLength);
 	}
 	 */
+	
 		
 	unsigned char chars[1];
 	chars[0] = ch;
@@ -767,7 +818,7 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 	};
 	
 	CFTypeRef values[] = { 
-		CTFontCreateWithName( (CFStringRef)@"Helvetica", 12, NULL) 
+		CTFontCreateWithName( (CFStringRef)@"Helvetica", characterProperties.fSize, NULL) 
 	};
 	
 
