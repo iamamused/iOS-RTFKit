@@ -91,7 +91,8 @@ typedef enum {
 	rkPropertyTypeCharacter, 
 	rkPropertyTypeParagraph, 
 	rkPropertyTypeSection, 
-	rkPropertyTypeDocument
+	rkPropertyTypeDocument,
+	rkPropertyTypeCTFontRef
 } rkPropertyType;
 
 typedef enum {
@@ -183,6 +184,11 @@ typedef struct symbol
 } RTFSymbol;
 
 
+
+
+
+
+
 typedef struct rk_coretext_attributes
 { 
 	CFNumberRef         characterShape;      //kCTCharacterShapeAttributeName
@@ -245,16 +251,17 @@ typedef struct rk_coretext_attributes
 	unsigned char     characters[8096];
 	int               destinationLength;
 	NSMutableAttributedString   * destinationString;
-	
-	CFNumberRef         characterShape;      //kCTCharacterShapeAttributeName
+
 	CTFontRef           font;                //kCTFontAttributeName
-	CFNumberRef         kern;                //kCTKernAttributeName
-	CFNumberRef         ligature;            //kCTLigatureAttributeName
 	CGColorRef          foregroundColor;     //kCTForegroundColorAttributeName
-	CFBooleanRef        foregroundColorFrom; //kCTForegroundColorFromContextAttributeName
 	CTParagraphStyleRef paragraphStyle;      //kCTParagraphStyleAttributeName
 	CFNumberRef         strokeWidth;         //kCTStrokeWidthAttributeName
 	CGColorRef          strokeColor;         //kCTStrokeColorAttributeName
+	
+	CFNumberRef         characterShape;      //kCTCharacterShapeAttributeName
+	CFNumberRef         kern;                //kCTKernAttributeName
+	CFNumberRef         ligature;            //kCTLigatureAttributeName
+	CFBooleanRef        foregroundColorFrom; //kCTForegroundColorFromContextAttributeName
 	CFNumberRef         superscript;         //kCTSuperscriptAttributeName
 	CGColorRef          underlineColor;      //kCTUnderlineColorAttributeName
 	CFNumberRef         underlineStyle;      //kCTUnderlineStyleAttributeName
