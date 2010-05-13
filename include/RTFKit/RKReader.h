@@ -23,22 +23,6 @@ typedef enum {
 	rkJustificationForced 
 } rkJustification;
 
-typedef enum {
-	sbkNon, 
-	sbkCol, 
-	sbkEvn, 
-	sbkOdd, 
-	sbkPg
-} SBK;
-
-typedef enum {
-	pgDec, 
-	pgURom, 
-	pgLRom, 
-	pgULtr, 
-	pgLLtr
-} PGN;
-
 typedef enum { 
 	rkDestinationStateNorm,  // Store the character in the destination
 	rkDestinationStateSkip   // Skip the character
@@ -52,27 +36,13 @@ typedef enum {
 
 //http://msdn.microsoft.com/en-us/library/aa140283(v=office.10).aspx
 typedef enum {
+	rkPropFontIndex,
 	rkPropFontSize,
 	rkPropBold, 
 	rkPropItalic, 
-	rkPropUnderline, 
 	rkPropLeftInd,
 	rkPropRightInd,
 	rkPropFirstInd, 
-	rkPropCols, 
-	rkPropPgnX,
-	rkPropPgnY,
-	rkPropXaPage,
-	rkPropYaPage, 
-	rkPropXaLeft,
-	rkPropXaRight,
-	rkPropYaTop,
-	rkPropYaBottom,
-	rkPropPgnStart,
-	rkPropSbk,
-	rkPropPgnFormat,
-	rkPropFacingp,
-	rkPropLandscape,
 	rkPropJust,
 	rkPropPard,
 	rkPropPlain,
@@ -83,16 +53,13 @@ typedef enum {
 typedef enum {
 	rkActionTypeSpec, 
 	rkActionTypeByte, 
-	rkActionTypeWord,
-	rkActionTypeFloat
+	rkActionTypeWord
 } rkActionType;
 
 typedef enum {
-	rkPropertyTypeCharacter, 
-	rkPropertyTypeParagraph, 
-	rkPropertyTypeSection, 
-	rkPropertyTypeDocument,
-	rkPropertyTypeCTFontRef
+	rkPropertyTypeFont, 
+	rkPropertyTypeParagraph,
+	rkPropertyTypeColor
 } rkPropertyType;
 
 typedef enum {
@@ -116,51 +83,47 @@ typedef enum {
 #pragma mark -
 #pragma mark Structs
 
-typedef struct char_prop
+typedef struct font_range
 {
-	int fSize;
-    char fBold;
-    char fUnderline;
-    char fItalic;
-} RTFCharacter;
+	struct font_range *next;
+	int rangeStart;
+	int rangeEnd;
+	
+	int fontIndex;
+	float fontSize;
+    bool isBold;
+    bool isItalic;
+} RKFont;
 
-typedef struct para_prop
+typedef struct paragraph_range
 {
-    int xaLeft;                 // Left indent in twips
-    int xaRight;                // Right indent in twips
-    int xaFirst;                // First line indent in twips
+	struct paragraph_range *next;
+	int rangeStart;
+	int rangeEnd;
+
+    int indentLeft;                 // Left indent in twips
+    int indentRight;                // Right indent in twips
+    int indentFirst;                // First line indent in twips
     rkJustification just;       // Justification
-} RTFParagraph;
+} RKParagraph;
 
-typedef struct sect_prop
-{
-    int cCols;                  // Number of columns
-    SBK sbk;                    // Section break type
-    int xaPgn;                  // X position of page number in twips
-    int yaPgn;                  // Y position of page number in twips
-    PGN pgnFormat;              // How the page number is formatted
-} RTFSection;
 
-typedef struct doc_prop
+typedef struct color_range
 {
-    int xaPage;                 // Page width in twips
-    int yaPage;                 // Page height in twips
-    int xaLeft;                 // Left margin in twips
-    int yaTop;                  // Top margin in twips
-    int xaRight;                // Right margin in twips
-    int yaBottom;               // Bottom margin in twips
-    int pgnStart;               // Starting page number in twips
-    char fFacingp;              // Facing pages enabled?
-    char fLandscape;            // Landscape or portrait??
-} RTFDocument;
+	struct color_range *next;
+	int rangeStart;
+	int rangeEnd;
+	
+    int colorIndex;
+} RKColor;
+
 
 typedef struct save
 {
     struct save *pNext;         // next save
-    RTFCharacter        characterProperties;
-    RTFParagraph        paragraphProperties;
-    RTFSection          sectionProperities;
-    RTFDocument         documentProperties;
+    RKFont				*fontRun;
+    RKParagraph			*paragraphRun;
+
     rkDestinationState  destinationState;
     rkInternalState     internalState;
 } RTFSaveState;
@@ -236,10 +199,6 @@ typedef struct rk_coretext_attributes
 	rkDestinationState     destinationState;
 	rkInternalState        internalState;
 
-	RTFCharacter characterProperties;
-	RTFParagraph paragraphProperties;
-	RTFSection   sectionProperities;
-	RTFDocument  documentProperties;
 	
 	RTFSaveState *psave;
 	
@@ -252,21 +211,9 @@ typedef struct rk_coretext_attributes
 	int               destinationLength;
 	NSMutableAttributedString   * destinationString;
 
-	CTFontRef           font;                //kCTFontAttributeName
-	CGColorRef          foregroundColor;     //kCTForegroundColorAttributeName
-	CTParagraphStyleRef paragraphStyle;      //kCTParagraphStyleAttributeName
-	CFNumberRef         strokeWidth;         //kCTStrokeWidthAttributeName
-	CGColorRef          strokeColor;         //kCTStrokeColorAttributeName
+	RKFont           *fontRun;  //kCTFontAttributeName
+	RKParagraph		 *paragraphRun;
 	
-	CFNumberRef         characterShape;      //kCTCharacterShapeAttributeName
-	CFNumberRef         kern;                //kCTKernAttributeName
-	CFNumberRef         ligature;            //kCTLigatureAttributeName
-	CFBooleanRef        foregroundColorFrom; //kCTForegroundColorFromContextAttributeName
-	CFNumberRef         superscript;         //kCTSuperscriptAttributeName
-	CGColorRef          underlineColor;      //kCTUnderlineColorAttributeName
-	CFNumberRef         underlineStyle;      //kCTUnderlineStyleAttributeName
-	CFBooleanRef        verticalForms;       //kCTVerticalFormsAttributeName
-	CTGlyphInfoRef      glyphInfo;           //kCTGlyphInfoAttributeName
 }
 
 - (id)initWithFilePath:(NSString *)filePath;

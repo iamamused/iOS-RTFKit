@@ -28,6 +28,9 @@
 - (int)parseSpecialProperty:(rkProperty)rkProp val:(int) val;
 - (int)putCharacter:(int)ch;
 - (int)getCharacterFromBuffer;
+
+- (int)pushFontRun;
+
 @end
 
 @implementation RKReader
@@ -35,69 +38,32 @@
 // RTF parser tables
 // Property descriptions
 static RTFProperty propertyDescription[rkPropMax] = {
-	{rkActionTypeWord,   rkPropertyTypeCharacter,  offsetof(RTFCharacter, fSize)},   // rkPropFontSize
-	{rkActionTypeByte,   rkPropertyTypeCharacter,  offsetof(RTFCharacter, fBold)},   // rkPropBold
-	{rkActionTypeByte,   rkPropertyTypeCharacter,  offsetof(RTFCharacter, fItalic)}, // rkPropItalic
-	{rkActionTypeByte,   rkPropertyTypeCharacter,  offsetof(RTFCharacter, fUnderline)}, // rkPropUnderline
-	{rkActionTypeWord,   rkPropertyTypeParagraph,  offsetof(RTFParagraph, xaLeft)},  // rkPropLeftInd
-	{rkActionTypeWord,   rkPropertyTypeParagraph,  offsetof(RTFParagraph, xaRight)}, // rkPropRightInd
-	{rkActionTypeWord,   rkPropertyTypeParagraph,  offsetof(RTFParagraph, xaFirst)}, // rkPropFirstInd
-	{rkActionTypeWord,   rkPropertyTypeSection,    offsetof(RTFSection,   cCols)},   // rkPropCols
-	{rkActionTypeWord,   rkPropertyTypeSection,    offsetof(RTFSection,   xaPgn)},   // rkPropPgnX
-	{rkActionTypeWord,   rkPropertyTypeSection,    offsetof(RTFSection,   yaPgn)},   // rkPropPgnY
-	{rkActionTypeWord,   rkPropertyTypeDocument,   offsetof(RTFDocument,  xaPage)},  // rkPropXaPage
-	{rkActionTypeWord,   rkPropertyTypeDocument,   offsetof(RTFDocument,  yaPage)},  // rkPropYaPage
-	{rkActionTypeWord,   rkPropertyTypeDocument,   offsetof(RTFDocument,  xaLeft)},  // rkPropXaLeft
-	{rkActionTypeWord,   rkPropertyTypeDocument,   offsetof(RTFDocument,  xaRight)}, // rkPropXaRight
-	{rkActionTypeWord,   rkPropertyTypeDocument,   offsetof(RTFDocument,  yaTop)},   // rkPropYaTop
-	{rkActionTypeWord,   rkPropertyTypeDocument,   offsetof(RTFDocument,  yaBottom)}, // rkPropYaBottom
-	{rkActionTypeWord,   rkPropertyTypeDocument,   offsetof(RTFDocument,  pgnStart)}, // rkPropPgnStart
-	{rkActionTypeByte,   rkPropertyTypeSection,    offsetof(RTFSection,   sbk)},     // rkPropSbk
-	{rkActionTypeByte,   rkPropertyTypeSection,    offsetof(RTFSection,   pgnFormat)}, // rkPropPgnFormat
-	{rkActionTypeByte,   rkPropertyTypeDocument,   offsetof(RTFDocument,  fFacingp)}, // rkPropFacingp
-	{rkActionTypeByte,   rkPropertyTypeDocument,   offsetof(RTFDocument,  fLandscape)}, // rkPropLandscape
-	{rkActionTypeByte,   rkPropertyTypeParagraph,  offsetof(RTFParagraph, just)},    // rkPropJust
-	{rkActionTypeSpec,   rkPropertyTypeParagraph,  0},                               // rkPropPard
-	{rkActionTypeSpec,   rkPropertyTypeCharacter,  0},                               // rkPropPlain
-	{rkActionTypeSpec,   rkPropertyTypeSection,    0},                               // rkPropSectd
+	{rkActionTypeByte,   rkPropertyTypeFont,  offsetof(RKFont, fontIndex)},
+	{rkActionTypeWord,   rkPropertyTypeFont,  offsetof(RKFont, fontSize)},
+	{rkActionTypeByte,   rkPropertyTypeFont,  offsetof(RKFont, isBold)},
+	{rkActionTypeByte,   rkPropertyTypeFont,  offsetof(RKFont, isItalic)},
+	{rkActionTypeWord,   rkPropertyTypeParagraph,  offsetof(RKParagraph, indentLeft)},
+	{rkActionTypeWord,   rkPropertyTypeParagraph,  offsetof(RKParagraph, indentRight)},
+	{rkActionTypeWord,   rkPropertyTypeParagraph,  offsetof(RKParagraph, indentFirst)},
+	{rkActionTypeByte,   rkPropertyTypeParagraph,  offsetof(RKParagraph, just)},
+	{rkActionTypeSpec,   rkPropertyTypeParagraph,  0},                               
+	{rkActionTypeSpec,   rkPropertyTypeFont,  0},                               
 };
 
 // Keyword descriptions
 static RTFSymbol keywordDescription[] = {
 	//  keyword     dflt    fPassDflt   kwd         idx
+	{"f",   0,       fTrue,     rkKeywordTypeProperty,    rkPropFontIndex},
 	{"fs",   12.0f,       fTrue,     rkKeywordTypeProperty,    rkPropFontSize},
 	{"b",        1,      fFalse,     rkKeywordTypeProperty,    rkPropBold},  // kCTFontBoldTrait
-	{"u",        1,      fFalse,     rkKeywordTypeProperty,    rkPropUnderline}, //
 	{"i",        1,      fFalse,     rkKeywordTypeProperty,    rkPropItalic}, // kCTFontItalicTrait
 	{"li",       0,      fFalse,     rkKeywordTypeProperty,    rkPropLeftInd}, //
 	{"ri",       0,      fFalse,     rkKeywordTypeProperty,    rkPropRightInd}, //
 	{"fi",       0,      fFalse,     rkKeywordTypeProperty,    rkPropFirstInd}, //
-	{"cols",     1,      fFalse,     rkKeywordTypeProperty,    rkPropCols},  //
-	{"sbknone",  sbkNon, fTrue,      rkKeywordTypeProperty,    rkPropSbk},   //
-	{"sbkcol",   sbkCol, fTrue,      rkKeywordTypeProperty,    rkPropSbk},   //
-	{"sbkeven",  sbkEvn, fTrue,      rkKeywordTypeProperty,    rkPropSbk},   //
-	{"sbkodd",   sbkOdd, fTrue,      rkKeywordTypeProperty,    rkPropSbk},   //
-	{"sbkpage",  sbkPg,  fTrue,      rkKeywordTypeProperty,    rkPropSbk},
-	{"pgnx",     0,      fFalse,     rkKeywordTypeProperty,    rkPropPgnX},
-	{"pgny",     0,      fFalse,     rkKeywordTypeProperty,    rkPropPgnY},
-	{"pgndec",   pgDec,  fTrue,      rkKeywordTypeProperty,    rkPropPgnFormat},
-	{"pgnucrm",  pgURom, fTrue,      rkKeywordTypeProperty,    rkPropPgnFormat},
-	{"pgnlcrm",  pgLRom, fTrue,      rkKeywordTypeProperty,    rkPropPgnFormat},
-	{"pgnucltr", pgULtr, fTrue,      rkKeywordTypeProperty,    rkPropPgnFormat},
-	{"pgnlcltr", pgLLtr, fTrue,      rkKeywordTypeProperty,    rkPropPgnFormat},
 	{"qc",       rkJustificationCenter,  fTrue,      rkKeywordTypeProperty,    rkPropJust},
 	{"ql",       rkJustificationLeft,  fTrue,      rkKeywordTypeProperty,    rkPropJust},
 	{"qr",       rkJustificationRight,  fTrue,      rkKeywordTypeProperty,    rkPropJust},
 	{"qj",       rkJustificationForced,  fTrue,      rkKeywordTypeProperty,    rkPropJust},
-	{"paperw",   12240,  fFalse,     rkKeywordTypeProperty,    rkPropXaPage},
-	{"paperh",   15480,  fFalse,     rkKeywordTypeProperty,    rkPropYaPage},
-	{"margl",    1800,   fFalse,     rkKeywordTypeProperty,    rkPropXaLeft},
-	{"margr",    1800,   fFalse,     rkKeywordTypeProperty,    rkPropXaRight},
-	{"margt",    1440,   fFalse,     rkKeywordTypeProperty,    rkPropYaTop},
-	{"margb",    1440,   fFalse,     rkKeywordTypeProperty,    rkPropYaBottom},
-	{"pgnstart", 1,      fTrue,      rkKeywordTypeProperty,    rkPropPgnStart},
-	{"facingp",  1,      fTrue,      rkKeywordTypeProperty,    rkPropFacingp},
-	{"landscape",1,      fTrue,      rkKeywordTypeProperty,    rkPropLandscape},
 	{"par",      0,      fFalse,     rkKeywordTypeCharacter,    0x0a},
 	// Most of these need better mapping ...
 	{"emspace",  0,      fFalse,     rkKeywordTypeCharacter,    ' '},
@@ -121,39 +87,6 @@ static RTFSymbol keywordDescription[] = {
 	{"bin",      0,      fFalse,     rkKeywordTypeSpecial,        rkSpecialTypeBin},
 	{"*",        0,      fFalse,     rkKeywordTypeSpecial,        rkSpecialTypeSkip},
 	{"'",        0,      fFalse,     rkKeywordTypeSpecial,        rkSpecialTypeHex},
-//    {"author",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"buptim",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"colortbl", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"comment",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"creatim",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"doccomm",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"fonttbl",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"footer",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"footerf",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"footerl",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"footerr",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"footnote", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"ftncn",    0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"ftnsep",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"ftnsepc",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"header",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"headerf",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"headerl",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"headerr",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"info",     0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"keywords", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"operator", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"pict",     0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"printim",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"private1", 0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"revtim",   0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"rxe",      0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"stylesheet",   0,  fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"subject",  0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"tc",       0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"title",    0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"txe",      0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
-//    {"xe",       0,      fFalse,     rkKeywordTypeDestination,    rkDestinationTypeSkip},
 	{"{",        0,      fFalse,     rkKeywordTypeCharacter,      '{'},
 	{"}",        0,      fFalse,     rkKeywordTypeCharacter,      '}'},
 	{"\\",       0,      fFalse,     rkKeywordTypeCharacter,      '\\'}
@@ -169,12 +102,18 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
  */
 -( id )initWithFilePath : ( NSString * )filePath;
 {
-	
-	font = CTFontCreateWithName( (CFStringRef)@"Helvetica", 12, NULL );
-
+		
 	sourceRTFData  = [[NSData dataWithContentsOfMappedFile:filePath] retain];
 	destinationString = [[NSMutableAttributedString alloc] initWithString:@""];
-
+	
+	fontRun = (RKFont *)malloc( sizeof(RKFont) );
+	fontRun->rangeStart = 0;
+	fontRun->rangeEnd = 0;
+	fontRun->fontIndex = 0;
+	fontRun->fontSize = 12.0;
+	fontRun->isBold = FALSE;
+	fontRun->isItalic = FALSE;
+	
 	if ([self parse] == rkOK ) {
 		NSLog(@"Result: %@", destinationString);
 	}
@@ -209,50 +148,50 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 -(int) applyPropertyChange : (rkProperty) prop val : (int)val;
 {
 	char *pb;
+	int ec;
+	
 	if ( destinationState == rkDestinationStateSkip ) {
 		// If we're skipping text don't do anything.
 		return rkOK;
 	}
 	// Get the appropriate property set based on the description.
 	switch ( propertyDescription[prop].prop ) {
-	     case rkPropertyTypeDocument:
-		     pb = (char *)&documentProperties;
-		     break;
-
-	     case rkPropertyTypeSection:
-		     pb = (char *)&sectionProperities;
-		     break;
-
-	     case rkPropertyTypeParagraph:
-		     pb = (char *)&paragraphProperties;
-		     break;
-
-	     case rkPropertyTypeCharacter:
-		     pb = (char *)&characterProperties;
-		     break;
-
-	     default:
-		     if ( propertyDescription[prop].actn != rkActionTypeSpec ) {
-			     return rkBadTable;
-		     }
-		     break;
+			
+		case rkPropertyTypeParagraph:
+			pb = (char *)&paragraphRun;
+			break;
+			
+		case rkPropertyTypeFont:
+			// Font property is changing so push the run.
+			if ( (ec = [self pushFontRun]) != rkOK ) {
+				return ec;
+			}
+			pb = (char *)&fontRun;
+			break;
+			
+		default:
+			if ( propertyDescription[prop].actn != rkActionTypeSpec ) {
+				return rkBadTable;
+			}
+			break;
 	} /* switch */
-	  // Apply the appropriate action based on the description
+	
+	// Apply the appropriate action based on the description
 	switch ( propertyDescription[prop].actn ) {
-	     case rkActionTypeByte:
-		     pb[propertyDescription[prop].offset] = (unsigned char)val;
-		     break;
-
-	     case rkActionTypeWord:
-		     ( *(int *)(pb + propertyDescription[prop].offset) ) = val;
-		     break;
-
-	     case rkActionTypeSpec:
-		     return [self parseSpecialProperty : prop val : val];
-		     break;
-
-	     default:
-		     return rkBadTable;
+		case rkActionTypeByte:
+			pb[propertyDescription[prop].offset] = (unsigned char)val;
+			break;
+			
+		case rkActionTypeWord:
+			( *(int *)(pb + propertyDescription[prop].offset) ) = val;
+			break;
+			
+		case rkActionTypeSpec:
+			return [self parseSpecialProperty : prop val : val];
+			break;
+			
+		default:
+			return rkBadTable;
 	} /* switch */
 	return rkOK;
 }
@@ -264,20 +203,20 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 -(int) parseSpecialProperty : (rkProperty) prop val : (int)val;
 {
 	switch ( prop ) {
-	     case rkPropPard:
-		     memset( &paragraphProperties, 0, sizeof(paragraphProperties) );
-		     return rkOK;
-
-	     case rkPropPlain:
-		     memset( &characterProperties, 0, sizeof(characterProperties) );
-		     return rkOK;
-
-	     case rkPropSectd:
-		     memset( &sectionProperities, 0, sizeof(sectionProperities) );
-		     return rkOK;
-
-	     default:
-		     return rkBadTable;
+		case rkPropPard:
+			memset( &paragraphRun, 0, sizeof(paragraphRun) );
+			return rkOK;
+			
+		case rkPropPlain:
+			memset( &fontRun, 0, sizeof(fontRun) );
+			return rkOK;
+			
+		case rkPropSectd:
+			//memset( &sectionProperities, 0, sizeof(sectionProperities) );
+			return rkOK;
+			
+		default:
+			return rkBadTable;
 	} /* switch */
 	return rkBadTable;
 }
@@ -327,23 +266,23 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 	fSkipDestIfUnk = fFalse;
 	
 	switch ( keywordDescription[isym].kwd ) {
-	     case rkKeywordTypeProperty:
-		     if ( keywordDescription[isym].fPassDflt || !fParam ) {
-			     param = keywordDescription[isym].dflt;
-		     }
-		     return [self applyPropertyChange : (rkProperty)keywordDescription[isym].idx val : param];
-
-	     case rkKeywordTypeCharacter:
-		     return [self parseCharacter : keywordDescription[isym].idx];
-
-	     case rkKeywordTypeDestination:
-		     return [self changeOutputDestination : (rkDestinationType)keywordDescription[isym].idx];
-
-	     case rkKeywordTypeSpecial:
-		     return [self parseSpecialKeyword : (rkSpecialType)keywordDescription[isym].idx];
-
-	     default:
-		     return rkBadTable;
+		case rkKeywordTypeProperty:
+			if ( keywordDescription[isym].fPassDflt || !fParam ) {
+				param = keywordDescription[isym].dflt;
+			}
+			return [self applyPropertyChange : (rkProperty)keywordDescription[isym].idx val : param];
+			
+		case rkKeywordTypeCharacter:
+			return [self parseCharacter : keywordDescription[isym].idx];
+			
+		case rkKeywordTypeDestination:
+			return [self changeOutputDestination : (rkDestinationType)keywordDescription[isym].idx];
+			
+		case rkKeywordTypeSpecial:
+			return [self parseSpecialKeyword : (rkSpecialType)keywordDescription[isym].idx];
+			
+		default:
+			return rkBadTable;
 	} /* switch */
 	
 	return rkBadTable;
@@ -395,10 +334,10 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 	}
 	// TODO: handle other types.
 	switch ( dt ) {
-	     default:
-		     // when in doubt, skip it...
-		     destinationState = rkDestinationStateSkip;
-		     break;
+		default:
+			// when in doubt, skip it...
+			destinationState = rkDestinationStateSkip;
+			break;
 	} /* switch */
 	return rkOK;
 }
@@ -445,6 +384,34 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 	return ch;
 }
 
+
+#pragma mark -
+#pragma mark Run Storage
+
+/**
+ * Save relevant info on a linked list of RTFSaveState structures.
+ */
+-(int) pushFontRun
+{
+	RKFont *fontNew = (RKFont *)malloc( sizeof(RKFont) );
+	if ( !fontNew ) {
+		return rkStackOverflow;
+	}
+	
+	fontNew->next = fontRun;
+	fontNew->rangeStart = destinationLength;
+	fontNew->rangeEnd = destinationLength;
+	
+	// Maintain existing properties
+	fontNew->fontIndex = fontRun->fontIndex;
+	fontNew->fontSize = fontRun->fontSize;
+	fontNew->isBold = fontRun->isBold;
+	fontNew->isItalic = fontRun->isItalic;
+	
+	fontRun = fontNew;
+	return rkOK;
+}
+
 #pragma mark -
 #pragma mark State Management
 
@@ -454,15 +421,12 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 -(int) pushState
 {
 	RTFSaveState *psaveNew = (RTFSaveState *)malloc( sizeof(RTFSaveState) );
-	//RTFSaveState *ctNew = (RTFCoreTextAttributes *)malloc(sizeof(RTFCoreTextAttributes));
 	if ( !psaveNew ) {
 		return rkStackOverflow;
 	}
 	psaveNew->pNext = psave;
-	psaveNew->characterProperties = characterProperties;
-	psaveNew->paragraphProperties = paragraphProperties;
-	psaveNew->sectionProperities = sectionProperities;
-	psaveNew->documentProperties = documentProperties;
+	psaveNew->fontRun = fontRun;
+	psaveNew->paragraphRun = paragraphRun;
 	psaveNew->destinationState = destinationState;
 	psaveNew->internalState = internalState;
 	internalState = rkInternalStateNorm;
@@ -480,25 +444,29 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 -(int) popState
 {
 	RTFSaveState *psaveOld;
+	
 	int ec;
+	
 	if ( !psave ) {
 		return rkStackUnderflow;
 	}
+	
 	if ( destinationState != psave->destinationState ) {
 		if ( (ec = [self endGroupAction:destinationState]) != rkOK ) {
 			return ec;
 		}
 	}
-	characterProperties = psave->characterProperties;
-	paragraphProperties = psave->paragraphProperties;
-	sectionProperities = psave->sectionProperities;
-	documentProperties = psave->documentProperties;
+	
+	fontRun = psave->fontRun;
+	paragraphRun = psave->paragraphRun;
 	destinationState = psave->destinationState;
 	internalState = psave->internalState;
+	
 	psaveOld = psave;
 	psave = psave->pNext;
 	cGroup--;
 	free(psaveOld);
+	
 	return rkOK;
 }
 
@@ -606,6 +574,9 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 	if ( cGroup > 0 ) {
 		return rkUnmatchedBrace;
 	}
+	
+	[self applyRuns];
+
 	return rkOK;
 }
 
@@ -699,17 +670,17 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 		internalState = rkInternalStateNorm;
 	}
 	switch ( destinationState ) {
-	     case rkDestinationStateSkip:
-		     // Skip this character.
-		     return rkOK;
-
-	     case rkDestinationStateNorm:
-		     // Output a character. Properties are valid at this point.
-		     return [self storeCharacter : ch flush : false];
-
-	     default:
-		     // handle other destinations....
-		     return rkOK;
+		case rkDestinationStateSkip:
+			// Skip this character.
+			return rkOK;
+			
+		case rkDestinationStateNorm:
+			// Output a character. Properties are valid at this point.
+			return [self storeCharacter : ch flush : false];
+			
+		default:
+			// handle other destinations....
+			return rkOK;
 	} /* switch */
 }
 
@@ -722,20 +693,37 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
  */
 -(int) storeCharacter : (int)ch flush : ( bool )flush;
 {
-	int test = characterProperties.fSize;
-	NSLog( @"Size %d", test );
-
-
-	/*
-	   if (boldTest == fTrue) {
-	        NSLog( @"Bold at %d", destinationLength );
-	   } else {
-	        NSLog(@"Not Bold at %d", destinationLength);
-	   }
-	 */
+	// @TODO revert this to use NSData.
 	unsigned char chars[1];
 	chars[0] = ch;
 	NSString *s = [NSString stringWithCString:chars length:1];
+	NSAttributedString *chr = [[NSAttributedString alloc] initWithString:s];
+	[destinationString appendAttributedString : chr];
+	[chr release];
+	destinationLength++;
+	return rkOK;
+}
+
+#pragma mark -
+#pragma mark Formatting
+
+/**
+ * Send a character to the output file.
+ */
+-(int) applyRuns;
+{
+
+	
+	// Apply font runs
+	
+	RKFont *run = fontRun;
+	do {
+		
+		float size = run->fontSize;
+		
+	} while ( (run = fontRun->next) != nil );
+	
+	/*
 	CFStringRef keys[] = {
 		//kCTCharacterShapeAttributeName,
 		kCTFontAttributeName
@@ -754,21 +742,23 @@ int numKeywords = sizeof(keywordDescription) / sizeof(RTFSymbol);
 		//kCTRunDelegateAttributeName
 	};
 	CFTypeRef values[] = {
-		CTFontCreateWithName( (CFStringRef) @"Helvetica", characterProperties.fSize, NULL )
+		CTFontCreateWithName( (CFStringRef) @"Helvetica", fontRun->fontSize, NULL )
 	};
 	CFDictionaryRef attr = CFDictionaryCreate(
-	        NULL,
-	        (const void **)&keys,
-	        (const void **)&values,
-	        sizeof(keys) / sizeof(keys[0]),
-	        &kCFTypeDictionaryKeyCallBacks,
-	        &kCFTypeDictionaryValueCallBacks
-	        );
+											  NULL,
+											  (const void **)&keys,
+											  (const void **)&values,
+											  sizeof(keys) / sizeof(keys[0]),
+											  &kCFTypeDictionaryKeyCallBacks,
+											  &kCFTypeDictionaryValueCallBacks
+											  );
 	NSAttributedString *chr = [[NSAttributedString alloc] initWithString:s attributes:( NSDictionary * )attr];
 	[destinationString appendAttributedString : chr];
 	CFRelease(attr);
 	[chr release];
 	destinationLength++;
+	 */
 	return rkOK;
 }
+
 @end
