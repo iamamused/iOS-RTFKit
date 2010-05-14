@@ -1,13 +1,3 @@
+I'm not going to work on this project any more at the moment since OmniGroup has released their RTF parser which is way better than what I'm doing here. see: 
 
-RTF to NSAttributedString Parser 
-based on http://latex2rtf.sourceforge.net/rtfspec_45.html
-
-This is a work in progress and is far from complete or working. 
-
-DO NOT USE IT!!
-
-See the LICENSE for licensing information. If you require a different license 
-please contact me at license@tropicalpixels.com
-
-Please see http://jeffreysambells.com/iphone-os-static-library-template/ 
-for project layout information.
+http://github.com/omnigroup/OmniGroup/tree/master/Frameworks/OmniUI/iPad/RTF/
