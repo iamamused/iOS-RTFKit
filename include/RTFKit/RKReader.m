@@ -6,7 +6,9 @@
 //  Copyright TropicalPixels. 2010. All rights reserved.
 //  Please see the included LICENSE for applicable licensing information.
 //
-//  Based on http://latex2rtf.sourceforge.net/rtfspec_45.html
+//  Based on 
+//	http://latex2rtf.sourceforge.net/rtfspec_45.html
+//  http://msdn.microsoft.com/en-us/library/aa140300(v=office.10).aspx
 //
 
 #import <UIKit/UIKit.h>

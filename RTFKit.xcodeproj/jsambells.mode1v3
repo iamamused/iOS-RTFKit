@@ -328,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>DD8A8FE8119D9C1000DACC76</string>
+										<string>DD8A9057119DA01900DACC76</string>
 										<key>history</key>
 										<array>
 											<string>DDB6BB8C11999AB300EC8C97</string>
@@ -555,14 +555,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>DD8A8FE9119D9C1000DACC76</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>DD8A8F3F119D8CDB00DACC76</string>
 		<string>DD8A8F36119D8C9700DACC76</string>
-		<string>DD12B3D511988FA700882A02</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/RTFKit.xcodeproj</string>
+		<string>DD12B3D511988FA700882A02</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/RTFKit.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>-1280 231 1280 969 -1280 176 1280 1024 </string>
@@ -781,7 +780,7 @@
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -905,7 +904,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {878, 803}}</string>
 								<key>RubberWindowFrame</key>
-								<string>941 257 878 844 0 0 1920 1178 </string>
+								<string>1046 37 878 844 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -934,11 +933,11 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>941 257 878 844 0 0 1920 1178 </string>
+			<string>1046 37 878 844 0 0 1920 1178 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
