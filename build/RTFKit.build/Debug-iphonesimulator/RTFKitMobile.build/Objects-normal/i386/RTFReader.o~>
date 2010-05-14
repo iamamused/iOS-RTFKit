@@ -1,6 +1,0 @@
-/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m: In function '-[RTFReader initWithFilePath:]':
-/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m:202: warning: 'stringWithContentsOfFile:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:361)
-/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m:193: warning: unused variable 'newText'
-/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m: In function '-[RTFReader storeCharacter:flush:]':
-/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m:735: warning: 'stringWithCString:length:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h:367)
-/Users/jsambells/Documents/Tropical_Pixels/Apps/RTFKit/include/RTFKit/RTFReader.m:735: warning: pointer targets in passing argument 1 of 'stringWithCString:length:' differ in signedness

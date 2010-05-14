@@ -18,6 +18,14 @@
 		DD12B3EF11988FF600882A02 /* test.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DD12B3EE11988FF600882A02 /* test.rtf */; };
 		DD12B3F61198900900882A02 /* RKReader.h in Headers */ = {isa = PBXBuildFile; fileRef = DD12B3F21198900900882A02 /* RKReader.h */; };
 		DD12B3F71198900900882A02 /* RKReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DD12B3F31198900900882A02 /* RKReader.m */; };
+		DD215FE4119C886900443D7B /* RKFont.h in Headers */ = {isa = PBXBuildFile; fileRef = DD215FE2119C886900443D7B /* RKFont.h */; };
+		DD215FE5119C886900443D7B /* RKFont.m in Sources */ = {isa = PBXBuildFile; fileRef = DD215FE3119C886900443D7B /* RKFont.m */; };
+		DD215FE8119C888600443D7B /* RKParagraph.h in Headers */ = {isa = PBXBuildFile; fileRef = DD215FE6119C888600443D7B /* RKParagraph.h */; };
+		DD215FE9119C888600443D7B /* RKParagraph.m in Sources */ = {isa = PBXBuildFile; fileRef = DD215FE7119C888600443D7B /* RKParagraph.m */; };
+		DD215FEE119C89A500443D7B /* RKRange.h in Headers */ = {isa = PBXBuildFile; fileRef = DD215FEC119C89A500443D7B /* RKRange.h */; };
+		DD215FEF119C89A500443D7B /* RKRange.m in Sources */ = {isa = PBXBuildFile; fileRef = DD215FED119C89A500443D7B /* RKRange.m */; };
+		DD216004119C8B0400443D7B /* RKColor.h in Headers */ = {isa = PBXBuildFile; fileRef = DD216002119C8B0400443D7B /* RKColor.h */; };
+		DD216005119C8B0400443D7B /* RKColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DD216003119C8B0400443D7B /* RKColor.m */; };
 		DD7CFA0911721C4B0028A53F /* RTFKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* RTFKit_Prefix.pch */; };
 		DD7CFA0D11721CC20028A53F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		DD7CFA3711721D890028A53F /* RTFKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DD7CFA3611721D890028A53F /* RTFKit.h */; };
@@ -54,6 +62,14 @@
 		DD12B3EE11988FF600882A02 /* test.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = test.rtf; sourceTree = "<group>"; };
 		DD12B3F21198900900882A02 /* RKReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKReader.h; path = include/RTFKit/RKReader.h; sourceTree = "<group>"; };
 		DD12B3F31198900900882A02 /* RKReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKReader.m; path = include/RTFKit/RKReader.m; sourceTree = "<group>"; };
+		DD215FE2119C886900443D7B /* RKFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKFont.h; path = include/RTFKit/RKFont.h; sourceTree = "<group>"; };
+		DD215FE3119C886900443D7B /* RKFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKFont.m; path = include/RTFKit/RKFont.m; sourceTree = "<group>"; };
+		DD215FE6119C888600443D7B /* RKParagraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKParagraph.h; path = include/RTFKit/RKParagraph.h; sourceTree = "<group>"; };
+		DD215FE7119C888600443D7B /* RKParagraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKParagraph.m; path = include/RTFKit/RKParagraph.m; sourceTree = "<group>"; };
+		DD215FEC119C89A500443D7B /* RKRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKRange.h; path = include/RTFKit/RKRange.h; sourceTree = "<group>"; };
+		DD215FED119C89A500443D7B /* RKRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKRange.m; path = include/RTFKit/RKRange.m; sourceTree = "<group>"; };
+		DD216002119C8B0400443D7B /* RKColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RKColor.h; path = include/RTFKit/RKColor.h; sourceTree = "<group>"; };
+		DD216003119C8B0400443D7B /* RKColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RKColor.m; path = include/RTFKit/RKColor.m; sourceTree = "<group>"; };
 		DD7CF8E911720A330028A53F /* libRTFKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRTFKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7CF970117211070028A53F /* RTFKit.framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RTFKit.framework-Info.plist"; sourceTree = "<group>"; };
 		DD7CFA3611721D890028A53F /* RTFKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTFKit.h; path = include/RTFKit/RTFKit.h; sourceTree = "<group>"; };
@@ -159,6 +175,14 @@
 				DD7CFA3611721D890028A53F /* RTFKit.h */,
 				DD12B3F21198900900882A02 /* RKReader.h */,
 				DD12B3F31198900900882A02 /* RKReader.m */,
+				DD215FE2119C886900443D7B /* RKFont.h */,
+				DD215FE3119C886900443D7B /* RKFont.m */,
+				DD215FE6119C888600443D7B /* RKParagraph.h */,
+				DD215FE7119C888600443D7B /* RKParagraph.m */,
+				DD215FEC119C89A500443D7B /* RKRange.h */,
+				DD215FED119C89A500443D7B /* RKRange.m */,
+				DD216002119C8B0400443D7B /* RKColor.h */,
+				DD216003119C8B0400443D7B /* RKColor.m */,
 			);
 			name = "RTFKit Framework";
 			sourceTree = "<group>";
@@ -173,6 +197,10 @@
 				DD7CFA0911721C4B0028A53F /* RTFKit_Prefix.pch in Headers */,
 				DD7CFA3711721D890028A53F /* RTFKit.h in Headers */,
 				DD12B3F61198900900882A02 /* RKReader.h in Headers */,
+				DD215FE4119C886900443D7B /* RKFont.h in Headers */,
+				DD215FE8119C888600443D7B /* RKParagraph.h in Headers */,
+				DD215FEE119C89A500443D7B /* RKRange.h in Headers */,
+				DD216004119C8B0400443D7B /* RKColor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +291,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD12B3F71198900900882A02 /* RKReader.m in Sources */,
+				DD215FE5119C886900443D7B /* RKFont.m in Sources */,
+				DD215FE9119C888600443D7B /* RKParagraph.m in Sources */,
+				DD215FEF119C89A500443D7B /* RKRange.m in Sources */,
+				DD216005119C8B0400443D7B /* RKColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

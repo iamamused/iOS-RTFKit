@@ -10,4 +10,9 @@
 #import <Foundation/Foundation.h>
 
 // Include your plugin related headers here...
+#import "RKRange.h"
+#import "RKFont.h"
+#import "RKParagraph.h"
+#import "RKColor.h"
 #import "RKReader.h"
+

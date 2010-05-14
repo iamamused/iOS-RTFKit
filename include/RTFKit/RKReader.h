@@ -8,6 +8,7 @@
 //
 
 #import <CoreText/CoreText.h>
+#import <RTFKit/RTFKit.h>
 
 // typedef char bool;
 #define fTrue 1
@@ -16,12 +17,6 @@
 #pragma mark -
 #pragma mark Enumerations
 
-typedef enum {
-	rkJustificationLeft, 
-	rkJustificationRight, 
-	rkJustificationCenter, 
-	rkJustificationForced 
-} rkJustification;
 
 typedef enum { 
 	rkDestinationStateNorm,  // Store the character in the destination
@@ -46,15 +41,14 @@ typedef enum {
 	rkPropJust,
 	rkPropPard,
 	rkPropPlain,
-	rkPropSectd,
 	rkPropMax 
 } rkProperty;
 
 typedef enum {
-	rkActionTypeSpec, 
-	rkActionTypeByte, 
-	rkActionTypeWord
-} rkActionType;
+	rkValueTypeSpec, 
+	rkValueTypeByte, 
+	rkValueTypeWord
+} rkValueType;
 
 typedef enum {
 	rkPropertyTypeFont, 
@@ -83,46 +77,10 @@ typedef enum {
 #pragma mark -
 #pragma mark Structs
 
-typedef struct font_range
-{
-	struct font_range *next;
-	int rangeStart;
-	int rangeEnd;
-	
-	int fontIndex;
-	float fontSize;
-    bool isBold;
-    bool isItalic;
-} RKFont;
-
-typedef struct paragraph_range
-{
-	struct paragraph_range *next;
-	int rangeStart;
-	int rangeEnd;
-
-    int indentLeft;                 // Left indent in twips
-    int indentRight;                // Right indent in twips
-    int indentFirst;                // First line indent in twips
-    rkJustification just;       // Justification
-} RKParagraph;
-
-
-typedef struct color_range
-{
-	struct color_range *next;
-	int rangeStart;
-	int rangeEnd;
-	
-    int colorIndex;
-} RKColor;
-
 
 typedef struct save
 {
     struct save *pNext;         // next save
-    RKFont				*fontRun;
-    RKParagraph			*paragraphRun;
 
     rkDestinationState  destinationState;
     rkInternalState     internalState;
@@ -130,10 +88,11 @@ typedef struct save
 
 typedef struct propmod
 {
-    rkActionType actn;      // size of value
-    rkPropertyType prop;    // structure containing value
-    int  offset;            // offset of value from base of structure
+    rkValueType actn;     // size of value
+    rkPropertyType prop;           // structure containing value
+    SEL selector;    // offset of value from base of structure
 } RTFProperty;
+
 
 typedef struct symbol
 {
@@ -145,11 +104,6 @@ typedef struct symbol
 						 // index into destination table if kwd == rkKeywordTypeDestination
                          // character to print if kwd == rkKeywordTypeCharacter
 } RTFSymbol;
-
-
-
-
-
 
 
 typedef struct rk_coretext_attributes
@@ -199,7 +153,6 @@ typedef struct rk_coretext_attributes
 	rkDestinationState     destinationState;
 	rkInternalState        internalState;
 
-	
 	RTFSaveState *psave;
 	
 	// RTFDoc buffer elements.
@@ -211,9 +164,9 @@ typedef struct rk_coretext_attributes
 	int               destinationLength;
 	NSMutableAttributedString   * destinationString;
 
-	RKFont           *fontRun;  //kCTFontAttributeName
-	RKParagraph		 *paragraphRun;
-	
+	NSMutableArray       *fontRuns;
+	NSMutableArray		 *paragraphRuns;
+		
 }
 
 - (id)initWithFilePath:(NSString *)filePath;
